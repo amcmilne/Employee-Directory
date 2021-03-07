@@ -1,24 +1,28 @@
 import React from "react";
 import "./index.css";
-import CardDataContext from "./utils/CardDataContext";
 
-const DOBSearch = () => {
-    const context = React.useContext(CardDataContext);
-    return (
+const DOBSearch = (props) => {
+       return (
         <div>
-            <form className="d-flex">
-            <input 
+            <form className="d-flex" />
+            <input  
+                onChange={props.handleInputChange}
+                value={props.search}
                 className="form-control me-2" 
-                type="search" 
+                name= "search"
+                type="text" 
                 placeholder="Search by DOB" 
-                aria-label="Search">
-                onChange={e => context.handleSearchChange(e)}/
-            </input>        
+                aria-label="Search"
+                />             
+              
+                 
             <button 
-                class="btn btn-outline-success" 
-                type="submit">Search
-            </button>
-            </form>
+                onClick={props.handleFormSubmit}    
+                className="btn btn-outline-success" 
+                type="submit" 
+                Search
+             />               
+           
         </div>
     )
 }
