@@ -9,7 +9,7 @@ const DOBSearch = (props) => {
                 onChange={props.handleInputChange}
                 value={props.value}
                 id="employees"
-                list="dob"
+                list=""
                 className="form-control me-2" 
                 name= "search"
                 type="text" 

@@ -73,7 +73,7 @@ class EmployeeContainer extends React.Component {
     }
     const { employees, search } = this.state;
     const filteredEmployees = employees.filter((employee) =>
-      employee.name.first.toLowerCase().includes(search.toLowerCase())
+      employee.name.first.toString().toLowerCase().includes(search.toLowerCase())
     );
 
     this.setState({
@@ -87,7 +87,7 @@ class EmployeeContainer extends React.Component {
     const employees = this.state.employees;
     const filteredEmployees = employees.filter(
       (employee) =>
-        employee.name.toLowerCase().indexOf(userInput.toLowerCase()) > -1
+      employee.name.toString().toLowerCase().indexOf(userInput.toLowerCase()) > -1
     );
 
     this.setState({
