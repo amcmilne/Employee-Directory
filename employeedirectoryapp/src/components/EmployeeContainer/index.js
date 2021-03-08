@@ -2,12 +2,12 @@ import React from "react";
 import Wrapper from "../Wrapper/index.js";
 import Nav from "../Nav/index.js";
 import Header from "../Header/index.js";
-import EmployeeCard from "../EmployeeCard/index.js";
+//import EmployeeCard from "../EmployeeCard/index.js";
 import EmployeeResults from "../EmployeeResults/index.js";
 
 import API from "../../utils/API.js";
 
-class EmployeeData extends React.Component {
+class EmployeeContainer extends React.Component {
   state = {
     search: "",
     employees: [],
@@ -100,20 +100,21 @@ class EmployeeData extends React.Component {
       <div>
         <Wrapper>
           <Header />
-          <Nav />
-          <EmployeeCard
-           results={this.state.filteredEmployees}
-           sortByName={this.sortByName} 
-           />
+          <Nav
+            handleInputChange={this.handleInputChange}
+            handleFormSubmit={this.handleFormSubmit}
+          />
           <EmployeeResults
-           employee={this.state.employees}
-           handleFormSubmit={this.handleFormSubmit}
-           handleInputChange={this.handleInputChange}
-            />
+            employee={this.state.employees}
+            handleFormSubmit={this.handleFormSubmit}
+            handleInputChange={this.handleInputChange}
+            results={this.state.filteredEmployees}
+            sortByName={this.sortByName}
+          />
         </Wrapper>
       </div>
     );
   }
 }
 
-export default EmployeeData;
+export default EmployeeContainer;

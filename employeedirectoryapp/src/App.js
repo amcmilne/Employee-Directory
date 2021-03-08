@@ -1,12 +1,10 @@
-import EmployeeData from "../src/components/EmployeeData/index.js";
-import EmployeeResults from "../src/components/EmployeeResults/index.js";
+import EmployeeContainer from "../src/components/EmployeeContainer/index.js";
 import './App.css';
 
 function App() {
   return (
     <div>
-    <EmployeeData />
-    <EmployeeResults />
+    <EmployeeContainer />  
     </div>
   );
 }

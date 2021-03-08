@@ -3,11 +3,13 @@ import "./index.css";
 
 const DOBSearch = (props) => {
        return (
-        <div>
+        <div className= "container-fluid">
             <form className="d-flex" />
             <input  
                 onChange={props.handleInputChange}
                 value={props.value}
+                id="employees"
+                list="dob"
                 className="form-control me-2" 
                 name= "search"
                 type="text" 
@@ -20,7 +22,7 @@ const DOBSearch = (props) => {
                 onClick={props.handleFormSubmit} 
                 value=""   
                 type="submit"
-                className="btn btn-success"> Submit               
+                className="btn btn-success"> Search             
              </button>              
            
         </div>
