@@ -1,5 +1,6 @@
 import React from "react";
 import Moment from "react-moment";
+import "./index.css";
 
 function EmployeeResults(props) {
   return (
@@ -7,10 +8,10 @@ function EmployeeResults(props) {
       <div className="container-fluid">
         <div className="row">
           <table className="employeeResults">
-            <th />
+            <thead />
             <tr />
-            <th></th>
 
+            <th></th>
             <th>Employee</th>
             <th>DOB</th>
             <th>Phone</th>

@@ -1,6 +1,5 @@
 import React from "react";
 import Wrapper from "../Wrapper/index.js";
-import Nav from "../Nav/index.js";
 import Header from "../Header/index.js";
 import EmployeeResults from "../EmployeeResults/index.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -82,13 +81,11 @@ class EmployeeContainer extends React.Component {
     return (
       <div>
         <Wrapper>
-          <Header />
-          <Nav
+          <Header
             handleInputChange={this.handleInputChange}
             handleFormSubmit={this.handleFormSubmit}
             employees={this.state.employees}
-            results={this.state.filteredEmployees}
-          />
+            results={this.state.filteredEmployees} />      
           <EmployeeResults
             results={this.state.filteredEmployees}
             sortByName={this.sortByName}

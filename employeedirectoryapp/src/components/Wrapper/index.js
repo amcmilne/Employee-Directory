@@ -3,7 +3,7 @@ import "./index.css";
 
 function Wrapper(props) {
   return (
-      <div className="wrapper">
+      <div className="container-fluid">
         { props.children }
       </div>
   );

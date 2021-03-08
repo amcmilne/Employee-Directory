@@ -1,14 +1,26 @@
-import React from 'react';
+import React from "react";
+import NameSearch from "../NameSearch/index.js";
 import "./index.css";
 
-function Header () {
-    return (
-      <div className="header">
-        <h1>Employee Directory</h1>
-        <h4>Find contacts within your organization</h4>
+function Header(props) {
+  return (
+    <div className="container-fluid">
+      <div className="jumbotron">
+        <h1>
+          <strong>Employee Directory</strong>
+        </h1>
+        <h3>
+          <strong>Find contacts within your organization</strong>
+        </h3>
 
+        <div className="row">
+          <form className="form-inline">
+            <NameSearch handleInputChange={props.handleInputChange} />
+          </form>
+        </div>
       </div>
-    )
-  }
+    </div>
+  );
+}
 
 export default Header;
