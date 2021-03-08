@@ -7,7 +7,7 @@ const DOBSearch = (props) => {
             <form className="d-flex" />
             <input  
                 onChange={props.handleInputChange}
-                value={props.search}
+                value={props.value}
                 className="form-control me-2" 
                 name= "search"
                 type="text" 
@@ -17,11 +17,11 @@ const DOBSearch = (props) => {
               
                  
             <button 
-                onClick={props.handleFormSubmit}    
-                className="btn btn-outline-success" 
-                type="submit" 
-                Search
-             />               
+                onClick={props.handleFormSubmit} 
+                value=""   
+                type="submit"
+                className="btn btn-success"> Submit               
+             </button>              
            
         </div>
     )

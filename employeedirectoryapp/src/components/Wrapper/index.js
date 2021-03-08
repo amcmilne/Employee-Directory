@@ -1,10 +1,10 @@
 import React from 'react';
 import "./index.css";
 
-function Wrapper({ children }) {
+function Wrapper(props) {
   return (
       <div className="wrapper">
-        { children }
+        { props.children }
       </div>
   );
 }

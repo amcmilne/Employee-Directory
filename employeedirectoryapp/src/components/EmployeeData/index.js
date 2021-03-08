@@ -1,25 +1,119 @@
 import React from "react";
+import Wrapper from "../Wrapper/index.js";
+import Nav from "../Nav/index.js";
+import Header from "../Header/index.js";
+import EmployeeCard from "../EmployeeCard/index.js";
+import EmployeeResults from "../EmployeeResults/index.js";
 
+import API from "../../utils/API.js";
 
-function EmployeeData(props) {
-    return(
-        <tr>
-            <th 
-                scope="row">
-                <img alt={props.firstName} src={props.image} />
-            </th>
+class EmployeeData extends React.Component {
+  state = {
+    search: "",
+    employees: [],
+    filteredEmployees: [],
+    order: "",
+  };
 
-            <td>{props.firstName}</td>
+  //initial API call on page load
+  componentDidMount() {
+    API.search()
+      .then((res) =>
+        this.setState({
+          employees: res.data.results,
+          filteredEmployees: res.data.results,
+        })
+      )
+      .catch((err) => console.log(err));
+  }
 
-            <td>{props.lastName}</td>
+  //API call for secondary searches
+  employeeSearch = () => {
+    API.search()
+      .then((res) =>
+        this.setState({
+          filteredEmployees: res.data.results,
+          employees: res.data.results,
+        })
+      )
+      .catch((err) => console.log(err));
+  };
 
-            <td>{props.email}</td>
+  //sort in ascending or descending order
+  sortByName = () => {
+    const filtered = this.state.filteredEmployees;
+    if (this.state.order === "asc") {
+      const sorted = filtered.sort((a, b) =>
+        a.name.first > b.name.first ? 1 : -1
+      );
+      console.log(sorted);
 
-            <td>{props.phone}</td>
+      this.setState({
+        filteredEmployees: sorted,
+        order: "desc",
+      });
+    } else {
+      const sorted = filtered.sort((a, b) =>
+        a.name.first > b.name.first ? -1 : 1
+      );
+      console.log(sorted);
 
-            <td>{props.dob}</td>
-        </tr>
+      this.setState({
+        filteredEmployees: sorted,
+        order: "asc",
+      });
+    }
+  };
+
+  //handle search
+  handleFormSubmit = (e) => {
+    e.preventDefault();
+    if (!this.state.search) {
+      alert("First Name, Last Name");
+    }
+    const { employees, search } = this.state;
+    const filteredEmployees = employees.filter((employee) =>
+      employee.name.first.toLowerCase().includes(search.toLowerCase())
     );
+
+    this.setState({
+      filteredEmployees,
+    });
+  };
+
+  //handle dynamic loading
+  handleInputChange = (e) => {
+    const userInput = e.target.value;
+    const employees = this.state.employees;
+    const filteredEmployees = employees.filter(
+      (employee) =>
+        employee.name.toLowerCase().indexOf(userInput.toLowerCase()) > -1
+    );
+
+    this.setState({
+      filteredEmployees,
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <Wrapper>
+          <Header />
+          <Nav />
+          <EmployeeCard
+           results={this.state.filteredEmployees}
+           sortByName={this.sortByName} 
+           />
+          <EmployeeResults
+           employee={this.state.employees}
+           handleFormSubmit={this.handleFormSubmit}
+           handleInputChange={this.handleInputChange}
+            />
+        </Wrapper>
+      </div>
+    );
+  }
 }
 
 export default EmployeeData;

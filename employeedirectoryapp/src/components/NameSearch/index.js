@@ -8,7 +8,7 @@ const NameSearch = (props) => {
             <form className="d-flex" />
             <input
                  onChange={props.handleInputChange}
-                 value={props.search}
+                 value={props.value}
                  className="form-control me-2" 
                  name= "search"
                  type="text" 
@@ -19,9 +19,10 @@ const NameSearch = (props) => {
                  
             <button
              onClick={props.handleSubmitForm}
-             className="btn btn-outline-success" 
-             type="submit" Search 
-             />
+             className="btn btn-success" 
+             value=""
+             type="submit"> Search 
+            </button>
                
            
         </div>
