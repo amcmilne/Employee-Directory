@@ -1,63 +1,57 @@
 import React from "react";
 import Moment from "react-moment";
-//import EmployeeCard from "../EmployeeCard/index.js";
 
 function EmployeeResults(props) {
   return (
-    <table className="employeeResults">
-      <th />
-      <tr />
-      <th></th>
-      <th onClick={props.sortByName}>Employee Name</th>
-      <th>Phone(cell)</th>
-      <th>E-mail Address</th>
-      <th>DOB</th>
+    <div>
+      <div className="container-fluid">
+        <div className="row">
+          <table className="employeeResults">
+            <th />
+            <tr />
+            <th></th>
 
-      <tb className="" />
-      {props.results &&
-        props.results.map((result) => (
-          <tr className="results" key={result.login.uuid}>
-            <td>
-              {" "}
-              <img
-                className="
-                    "
-                src={result.picture.large}
-                alt="employee"
-              />
-            </td>
-            <td className="name">
-              {result.name.first + " " + result.name.last}{" "}
-            </td>
-            <td className="phone">{result.cell}</td>
-            <td className="email">
-              <a href={result.email}>{result.email}</a>
-            </td>
-            <td className="DOB">
-              <Moment format="MM/DD/YYYY">{result.dob.date}</Moment>
-            </td>
-          </tr>
-        ))}
-    </table>
+            <th>Employee</th>
+            <th>DOB</th>
+            <th>Phone</th>
+            <th>Cell</th>
+            <th>E-mail Address</th>
+            <th onClick={props.sortByName}>FILTER (A-Z or Z-A)</th>
+
+            <tb className="id" />
+            {props.results &&
+              props.results.map((result) => (
+                <tr className="results" key={result.login.uuid}>
+                  <td>
+                    <img
+                      className="image"
+                      src={result.picture.large}
+                      alt="employeeheadshot"
+                    />
+                  </td>
+
+                  <td className="name">
+                    {result.name.first + " " + result.name.last}
+                  </td>
+
+                  <td className="DOB">
+                    <Moment format="MM/DD/YYYY">{result.dob.date}</Moment>
+                  </td>
+
+                  <td className="phone">{result.phone}</td>
+
+                  <td className="cell">{result.cell}</td>
+
+                  <td className="email">
+                    <a href={result.email}>{result.email}</a>
+                  </td>
+                </tr>
+              ))}
+          </table>
+        </div>
+      </div>
+    </div>
   );
 }
 
 export default EmployeeResults;
-
-// function EmployeeResults(props) {
-//   const employeeList= (
-//       props.data && props.data.map(() => (
-//     <EmployeeCard
-//       image={props.image}
-//       firstName={props.firstName}
-//       lastName={props.lastName}
-//       email={props.email}
-//       phone={props.phone}
-//       dob={props.dob}
-//     />
-//     ))
-//   )
-//   return employeeList || null;
-// }
-
-// export default EmployeeResults;
