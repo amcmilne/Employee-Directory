@@ -22,6 +22,8 @@ For this assignment, I created an employee directory with React. This assignment
 ## View my work: 
 * https://pacific-springs-33037.herokuapp.com/
 * https://github.com/amcmilne/Employee-Directory
+* https://amcmilne.github.io/Employee-Directory/
+
 
 ## License: 
 * MIT
