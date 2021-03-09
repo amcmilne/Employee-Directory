@@ -20,6 +20,8 @@ For this assignment, I created an employee directory with React. This assignment
 * [Random User API](https://randomuser.me/)
 
 ## View my work: 
+* https://pacific-springs-33037.herokuapp.com/
+* https://github.com/amcmilne/Employee-Directory
 
 ## License: 
 * MIT
