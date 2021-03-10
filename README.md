@@ -23,10 +23,7 @@ For this assignment, I created an employee directory with React. This assignment
 * https://pacific-springs-33037.herokuapp.com/
 * https://github.com/amcmilne/Employee-Directory
 * https://amcmilne.github.io/Employee-Directory/
-<<<<<<< HEAD
-=======
 
->>>>>>> b1b65bf359d4c5cfb6d76a65a59ac5333d2d2cd4
 
 ## License: 
 * MIT
