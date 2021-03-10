@@ -11,15 +11,15 @@ function EmployeeResults(props) {
             <thead />
             <tr />
 
-            <th></th>
-            <th>Employee</th>
-            <th>DOB</th>
-            <th>Phone</th>
-            <th>Cell</th>
-            <th>E-mail Address</th>
-            <th onClick={props.sortByName}>FILTER (A-Z or Z-A)</th>
+            <th scope="col"></th>
+            <th scope="col">Employee</th>
+            <th scope="col">DOB</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Cell</th>
+            <th scope="col">E-mail Address</th>
+            <th scope="col" onClick={props.sortByName}>FILTER (A-Z or Z-A)</th>
 
-            <tb className="id" />
+            <tbody className="id" />
             {props.results &&
               props.results.map((result) => (
                 <tr className="results" key={result.login.uuid}>

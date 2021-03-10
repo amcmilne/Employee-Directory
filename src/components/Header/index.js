@@ -14,9 +14,8 @@ function Header(props) {
         </h3>
 
         <div className="row">
-          <form className="form-inline">
+          <form className="form-inline" />
             <NameSearch handleInputChange={props.handleInputChange} />
-          </form>
         </div>
       </div>
     </div>
